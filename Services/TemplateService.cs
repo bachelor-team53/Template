@@ -9,7 +9,7 @@ public class TemplateService {
     }
 
     // Task.Run Makes a thread for CPU intensive operations (Usually we will be using async await for such operations) 
-    public Task<Template> FetchTemplateFromDatabase() {
-        return Task.Run(() => new Template(13, 14));
+    public Task<Template> FetchTemplateFromDatabase(int templateId) {
+        return Task.Run(() => new Template(templateId, templateId+1));
     }
 }

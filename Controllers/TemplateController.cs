@@ -13,8 +13,8 @@ public class TemplateController : ControllerBase {
         this._templateService = templateService;
     }
 
-    [HttpGet("template/{templateId}")]
+    [HttpGet("{templateId:int:required}")]
     public async Task<Template> FetchTemplateFromDatabase([FromRoute] int templateId) {
-        return await _templateService.FetchTemplateFromDatabase();
+        return await _templateService.FetchTemplateFromDatabase(templateId);
     }
 }
